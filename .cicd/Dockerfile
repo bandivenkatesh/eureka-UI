@@ -24,3 +24,4 @@ RUN chmod +x /entrypoint.sh
 
 # Use CMD instead of ENTRYPOINT to start the application
 CMD ["/entrypoint.sh"]
+
