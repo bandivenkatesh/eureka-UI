@@ -62,6 +62,8 @@ const config = {
 };
 
 const environment = process.env.REACT_APP_ENV || 'development';
-const currentConfig = config[environment];
-console.log('REACT_APP_ENV:', environment);
+// Handle tst as test
+const normalizedEnv = environment === 'tst' ? 'test' : environment;
+const currentConfig = config[normalizedEnv];
+console.log('REACT_APP_ENV:', normalizedEnv);
 export default currentConfig;

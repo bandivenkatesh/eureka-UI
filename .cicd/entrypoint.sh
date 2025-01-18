@@ -1,6 +1,11 @@
 #!/bin/bash
 ENVIRONMENT="${1:-dev}"
 
+# Convert tst to test for consistency
+if [ "$ENVIRONMENT" = "tst" ]; then
+    ENVIRONMENT="test"
+fi
+
 case "$ENVIRONMENT" in 
     dev)
         echo "Starting the application in dev mode"
@@ -19,7 +24,7 @@ case "$ENVIRONMENT" in
         npm run start:prod
         ;;
     *)
-        echo "Invalid environment specified, Valid options are 'dev', 'test', 'prod'"
+        echo "Invalid environment specified. Valid options are 'dev', 'test'/'tst', 'stage', 'prod'"
         exit 1
         ;;
 esac
