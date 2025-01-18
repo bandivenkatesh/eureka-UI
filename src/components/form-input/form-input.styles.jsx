@@ -1,53 +1,47 @@
-import styled, { css } from 'styled-components';
-
-const subColor = 'grey';
-const mainColor = 'black';
-
-const shrinkLabelStyles = css`
-  top: -14px;
-  font-size: 12px;
-  color: ${mainColor};
-`;
+import styled from 'styled-components';
 
 export const FormInputLabel = styled.label`
-  color: ${subColor};
-  font-size: 16px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 300ms ease all;
-  ${({ shrink }) => shrink && shrinkLabelStyles};
+  font-size: 10px;
+  color: #7f8c8d;
+  margin-bottom: 2px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  display: block;
 `;
 
 export const Input = styled.input`
-  background: none;
-  background-color: white;
-  color: ${subColor};
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
   width: 100%;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid ${subColor};
-  margin: 25px 0;
-
+  height: 26px;
+  padding: 2px 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #2c3e50;
+  background: #f8f9fa;
+  transition: all 0.2s ease;
+  margin-bottom: 1px;
+  
   &:focus {
     outline: none;
+    border-color: #3949ab;
+    background: white;
+    box-shadow: 0 0 0 2px rgba(57, 73, 171, 0.1);
   }
 
-  &:focus ~ ${FormInputLabel} {
-    ${shrinkLabelStyles};
+  &::placeholder {
+    color: #bdc3c7;
+  }
+
+  &:disabled {
+    background: #f1f3f4;
+    cursor: not-allowed;
   }
 `;
 
 export const Group = styled.div`
-  position: relative;
-  margin: 45px 0;
-
-  input[type='password'] {
-    letter-spacing: 0.3em;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3px;
 `;
