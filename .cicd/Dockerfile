@@ -17,14 +17,10 @@ RUN npm install
 EXPOSE 3000
 
 # Copy the entrypoint script
-COPY .cicd/entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # Make the script executable
 RUN chmod +x /entrypoint.sh
 
-# Set default environment
-ENV ENVIRONMENT=dev
-
-# Use entrypoint script with environment argument
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["dev"]
+# Use CMD instead of ENTRYPOINT to start the application
+CMD ["/entrypoint.sh"]
