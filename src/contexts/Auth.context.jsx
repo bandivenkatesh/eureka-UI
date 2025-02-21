@@ -88,7 +88,10 @@ export const ContextProvider = props => {
 
 const userLogIn = async (email, password, callback) => {
   try {
-    const response = await axios.get(`${config.userLoginApiUrl}?email=${email}&password=${password}`);
+    const response = await axios.post(config.userLoginApiUrl, {
+      email,
+      password,
+    });
     if (callback) {
       console.log(response);
       callback(response);
@@ -96,7 +99,7 @@ const userLogIn = async (email, password, callback) => {
     return response.data;
   } catch (error) {
     console.log(error)
-    if (error.response.data.message) {
+    if (error.response && error.response.data && error.response.data.message) {
       return callback(new Error(error.response.data.message));
     } else {
       return callback(new Error(error.message));

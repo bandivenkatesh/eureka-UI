@@ -1,5 +1,5 @@
-const produtsServiceLocalHost = 'http://localhost:8132/api'
-const usersServiceLocalHost = 'http://localhost:8232/api'
+const produtsServiceLocalHost = 'http://34.59.161.237:30001/api'
+const usersServiceLocalHost = 'http://34.59.161.237:30609/api'
 
 const produtsServiceDevHost = 'http://34.59.161.237:30001/api'
 const usersServiceDevHost = 'http://34.59.161.237:30609/api'
@@ -61,7 +61,7 @@ const config = {
     },
 };
 
-const environment = process.env.REACT_APP_ENV || 'development';
+const environment = process.env.REACT_APP_ENV || 'local';
 // Handle tst as test
 const normalizedEnv = environment === 'tst' ? 'test' : environment;
 const currentConfig = config[normalizedEnv];

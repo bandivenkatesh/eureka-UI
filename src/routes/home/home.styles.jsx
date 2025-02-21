@@ -41,7 +41,7 @@ export const CategoryItem = styled.div`
   overflow: hidden;
   border-radius: 12px;
   height: 280px;
-  animation: ${scaleIn} 0.6s ease-out forwards;
+  animation: ${fadeInUp} 0.8s ease-out forwards;
   animation-delay: ${props => props.index * 0.1}s;
   opacity: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
